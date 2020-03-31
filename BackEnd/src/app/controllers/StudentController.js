@@ -1,35 +1,39 @@
 import * as Yup from 'yup';
-import Administrador from '../models/Administrador';
 
-class AdministradorController {
+import Student from '../models/Student';
 
+
+class StudentController {
     async store(req, res) {
         //Validação dos dados na requisição
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             email: Yup.string().email().required(),
-            password: Yup.string().required().min(8),
+            idade: Yup.number().required(),
+            peso: Yup.number().required(),
+            altura: Yup.number().required(),
         });
         if(!(await schema.isValid(req.body))){
             return res.status(400).json({ error: 'Validation fails'});
         }
 
-        //Validation Email
-        const administradorExists = await Administrador.findOne({ where: { email: req.body.email }})
-            if(administradorExists){
-                return res.status(400).json({ error: 'Administrador already exists'});
+        const userExists = await Student.findOne({ where: { email: req.body.email }}) //Procura se algum usuário já possui um email
+            if(userExists){
+                return res.status(400).json({ error: 'Student already exists'});
             }
-
-        const {id, name, email} = await Administrador.create(req.body);
+        const {id, name, email, idade, peso, altura} = await Student.create(req.body);
 
         return res.json({
             id,
             name,
             email,
+            idade, 
+            peso, 
+            altura
         });
-    } 
-
-    async update(req, res){
+    }
+    //Verificar Studant para Student
+   /* async update(req, res){
         const schema = Yup.object().shape({
             name: Yup.string(),
             email: Yup.string().email(),
@@ -45,27 +49,29 @@ class AdministradorController {
 
         const { email, oldPassword } = req.body;
 
-        const user = await Administrador.findByPk(req.userId);
+        const user = await User.findByPk(req.userId);
 
         if(email != user.email){
-            const userExists = await Administrador.findOne({ where: { email: req.body.email }})
+            const userExists = await User.findOne({ where: { email: req.body.email }}) //Procura se algum usuário já possui um email
+
             if(userExists){
-                return res.status(400).json({ error: 'Administrator already exists'});
+                return res.status(400).json({ error: 'User already exists'});
             }
         }
 
-        if( oldPassword && !(await Administrador.checkPassword(oldPassword))){
+        if( oldPassword && !(await user.checkPassword(oldPassword))){
             return res.status(401).json({ error: 'Password does not match'});
         }
 
-        const {id, name} = await Administrador.update(req.body);
+        const {id, name, provider} = await user.update(req.body);
 
         return res.json({
             id,
             name,
-            email
+            email,
+            provider
         });
-    }
+    }*/
 }
 
-export default new AdministradorController();  
+export default new StudentController();  

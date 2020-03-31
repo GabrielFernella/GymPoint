@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import AdministradorController from './app/controllers/AdministradorController';
-import StudantController from './app/controllers/StudantController';
+import StudentController from './app/controllers/StudentController';
 import SessionController from './app/controllers/SessionController';
 
 import authMiddleware from './app/middlewares/auth';
@@ -13,7 +13,7 @@ routes.post('/administrador', AdministradorController.store);
 routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
-routes.put('/studants', StudantController.store);
+routes.post('/students', StudentController.store);
 
 
 
