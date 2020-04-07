@@ -1,0 +1,62 @@
+# Pacotes Instalados
+    * -  npm install multer date-fns@next nodemailer express-handlebars nodemailer-express-handlebars mongoose express-async-errors youch dotenv
+------------------------------------------------------------------------------------------------
+
+# Ordem de Processo
+    1 - Criar pasta temp ,Criação do app/config/multer.js e edição em routes.js
+    2 - create Avatar , FileController.js , create migration (create-files) and Model 'File.js' , edit index in database
+    3 - create migration 'add-avatar-field-to-users' (conexão com a tabela Users)
+    4 - listagem de providers, route.js, ProviderController, app.js and others
+    5 - Create migration appointment, create Model appointment, create Controller Appointment
+    6 - Rota de agendamento (Controller) e outros
+    7 - Validações dos Agendamentos (Appointment) usando Date-fns
+    8 - Mais validações na listagem de agendamentos(index)
+    9 - Create ScheduleController (para fazer a lsitagens de agendamentos do Provider) (Conceitos de date between)
+    10 - Subir um container MongoDB =>  docker run --name mongobarber -p 27017:27017 -d -t mongo
+    11 - Montar o Schema da notification
+    12 - criar a lista de notificações
+    13 - criar a read de notificações
+    14 - created canceled appointment
+    15 - biblioteca para envio de email (nodemailer), create config(mail.js), create(Mailtrap), create (lib folder) and Mail.js, edit appointmentController
+    16 - config template email (Handlebars) Edit and create more files, View(all files), lib(edit)
+    17 - Filas com Redis, download container redis and instalation bee-queue, create Queue.js(folder lib), create jobs for second plan
+    18 - tratamento de Exceções
+    19 - adicionado Sentry para tratamento de erros da aplicação
+    20 - Variáveis de Ambiente
+
+
+
+------------------------------------------------------------------------------------------------
+# Comandos do Sequelize (ORM)
+    * - 
+    
+
+
+------------------------------------------------------------------------------------------------
+# Passos
+    1 - 
+    2 - 
+    3 - 
+    4 - 
+    5 - 
+    6 - 
+    7 - 
+    8 - 
+    9 - 
+    10 - 
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+#### Anotações #####
+
+
+
+
+   
