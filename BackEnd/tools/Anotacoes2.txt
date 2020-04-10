@@ -3,6 +3,18 @@
 ------------------------------------------------------------------------------------------------
 
 # Ordem de Processo
+    Utilize o Gobarber como exemplo
+    1 - criando o model de Plan e fazendo sua controller
+    2 - 
+    3 - 
+    4 - 
+    5 - 
+    6 - 
+    7 - 
+
+
+
+
     1 - Criar pasta temp ,Criação do app/config/multer.js e edição em routes.js
     2 - create Avatar , FileController.js , create migration (create-files) and Model 'File.js' , edit index in database
     3 - create migration 'add-avatar-field-to-users' (conexão com a tabela Users)
@@ -28,7 +40,8 @@
 
 ------------------------------------------------------------------------------------------------
 # Comandos do Sequelize (ORM)
-    * - 
+    * - yarn sequelize migration:create --name=create-plan
+    * - yarn sequelize migration:create --name=add-plan-to-studant
     
 
 
